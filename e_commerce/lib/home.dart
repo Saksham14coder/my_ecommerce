@@ -1537,15 +1537,3 @@ class Page4 extends StatelessWidget {
     );
   }
 }
-
-
-// floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-// floatingActionButton: FloatingActionButton(
-// // isExtended: true,
-// child: Icon(Icons.message,color: Colors.white,),
-// backgroundColor: Colors.red.shade600,
-// onPressed: () {
-//
-// },
-// ),
-

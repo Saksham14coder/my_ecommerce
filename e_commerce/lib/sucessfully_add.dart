@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:e_commerce/add_product.dart';
+import 'package:e_commerce/main_dashboard.dart';
 import 'package:e_commerce/seller_dashboard.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
@@ -147,7 +148,7 @@ class _SuccessfulAddState extends State<SuccessfulAdd> {
                 margin: EdgeInsets.only(left: 20,right: 20,top: 10,bottom: 30),
 
                 child: MaterialButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SellerDashboard(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MainDashboard(token: '', id: ''),));
                 }, child: Text('Go To Dashboard',style: TextStyle(color: Colors.white,fontSize: 18),)
                   ,color: Colors.lightBlue.shade500,
                   height: 40,
@@ -158,8 +159,6 @@ class _SuccessfulAddState extends State<SuccessfulAdd> {
         ),
       ),
     );
-
-
   }
 
 

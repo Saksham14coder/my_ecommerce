@@ -134,7 +134,7 @@ class UserApi {
         "quantityType": "Pieces",
         "mrpPrice": 499.99,
         "offerPrice": 399.99,
-        "productType": "New",
+        "productType": "Not required",
         "sellerID": "9876",
         "returnReplacement": {
           "returnStatus": true,
@@ -142,6 +142,7 @@ class UserApi {
           "returnPeriod": 30,
           "replacementPeriod": 0,
         },
+        "stock": false,
       },
       {
         "productID": "12346",
@@ -153,7 +154,7 @@ class UserApi {
         "quantityType": "ml",
         "mrpPrice": 499.99,
         "offerPrice": 399.99,
-        "productType": "New1",
+        "productType": "Veg",
         "sellerID": "9876",
         "returnReplacement": {
           "returnStatus": true,
@@ -161,6 +162,7 @@ class UserApi {
           "returnPeriod": 30,
           "replacementPeriod": 0,
         },
+        "stock": true,
       },
       {
         "productID": "12347",
@@ -172,7 +174,7 @@ class UserApi {
         "quantityType": "ml",
         "mrpPrice": 499.99,
         "offerPrice": 399.99,
-        "productType": "New1",
+        "productType": "Veg",
         "sellerID": "9876",
         "returnReplacement": {
           "returnStatus": true,
@@ -180,6 +182,7 @@ class UserApi {
           "returnPeriod": 30,
           "replacementPeriod": 0,
         },
+        "stock": false,
       },
       {
         "productID": "12348",
@@ -191,7 +194,7 @@ class UserApi {
         "quantityType": "ml",
         "mrpPrice": 499.99,
         "offerPrice": 399.99,
-        "productType": "New1",
+        "productType": "Veg",
         "sellerID": "9876",
         "returnReplacement": {
           "returnStatus": true,
@@ -199,6 +202,7 @@ class UserApi {
           "returnPeriod": 30,
           "replacementPeriod": 0,
         },
+        "stock": true,
       },
       {
         "productID": "12349",
@@ -210,7 +214,7 @@ class UserApi {
         "quantityType": "ml",
         "mrpPrice": 499.99,
         "offerPrice": 399.99,
-        "productType": "New1",
+        "productType": "Veg",
         "sellerID": "9876",
         "returnReplacement": {
           "returnStatus": true,
@@ -218,6 +222,7 @@ class UserApi {
           "returnPeriod": 30,
           "replacementPeriod": 0,
         },
+        "stock": false,
       },
     ];
     List<Product> product = productJson.map((e) => Product.fromJson(e)).toList();

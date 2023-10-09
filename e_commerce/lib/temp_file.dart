@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:e_commerce/update_products.dart';
+import 'package:e_commerce/update_p.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
@@ -327,7 +327,7 @@ class _ManageProductssState extends State<ManageProductss> {
                                               child: MaterialButton(
                                                 color: Colors.lightBlue.shade400,
                                                 onPressed: (){
-                                                  Navigator.push(context, MaterialPageRoute(builder: (context) => UpdateProduct(),));
+                                              //    Navigator.push(context, MaterialPageRoute(builder: (context) => UpdateProduct(),));
                                                 }, child: Text('Update',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16),),),
                                             ),
                                           ),
@@ -481,7 +481,7 @@ class _ManageProductssState extends State<ManageProductss> {
                                               child: MaterialButton(
                                                 color: Colors.lightBlue.shade400,
                                                 onPressed: (){
-                                                  Navigator.push(context, MaterialPageRoute(builder: (context) => UpdateProduct(),));
+                                              //    Navigator.push(context, MaterialPageRoute(builder: (context) => UpdateProduct(),));
                                                 }, child: Text('Update',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16),),),
                                             ),
                                           ),
@@ -635,7 +635,7 @@ class _ManageProductssState extends State<ManageProductss> {
                                               child: MaterialButton(
                                                 color: Colors.lightBlue.shade400,
                                                 onPressed: (){
-                                                  Navigator.push(context, MaterialPageRoute(builder: (context) => UpdateProduct(),));
+                                                //  Navigator.push(context, MaterialPageRoute(builder: (context) => UpdateProduct(),));
                                                 }, child: Text('Update',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16),),),
                                             ),
                                           ),
@@ -789,7 +789,7 @@ class _ManageProductssState extends State<ManageProductss> {
                                               child: MaterialButton(
                                                 color: Colors.lightBlue.shade400,
                                                 onPressed: (){
-                                                  Navigator.push(context, MaterialPageRoute(builder: (context) => UpdateProduct(),));
+                                                 // Navigator.push(context, MaterialPageRoute(builder: (context) => UpdateProduct(),));
                                                 }, child: Text('Update',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16),),),
                                             ),
                                           ),

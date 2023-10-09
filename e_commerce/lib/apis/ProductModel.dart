@@ -11,6 +11,7 @@ class Product {
   String productType;
   ReturnReplacement returnReplacement;
   String sellerID;
+  bool stock;
 
   Product({
     required this.productID,
@@ -25,6 +26,7 @@ class Product {
     required this.productType,
     required this.returnReplacement,
     required this.sellerID,
+    required this.stock,
   });
 
   factory Product.fromJson(Map<String, dynamic> json) {
@@ -41,6 +43,7 @@ class Product {
       productType: json['productType'] ?? '',
       returnReplacement: ReturnReplacement.fromJson(json['returnReplacement']),
       sellerID: json['sellerID'] ?? '',
+      stock: json['stock'] ?? '',
     );
   }
 }

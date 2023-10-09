@@ -4,20 +4,23 @@ import 'package:flutter/material.dart';
 import 'main.dart';
 
 
-class UpdateProduct extends StatefulWidget {
-  const UpdateProduct({Key? key}) : super(key: key);
+class UpdateProductt extends StatefulWidget {
+  String pN ='';
+  UpdateProductt(this.pN);
 
   @override
-  _UpdateProductState createState() => _UpdateProductState();
+  _UpdateProducttState createState() => _UpdateProducttState();
 }
 
-class _UpdateProductState extends State<UpdateProduct> {
+class _UpdateProducttState extends State<UpdateProductt> {
 
   bool viewMore = false;
   String viewML = 'View more categories';
 
   String dropdownQuantity = 'pic';
   String dropdownType = 'Not required';
+
+
 
   var items = [
     'gm',
@@ -33,7 +36,8 @@ class _UpdateProductState extends State<UpdateProduct> {
   @override
   Widget build(BuildContext context) {
 
-
+    final productName = TextEditingController();
+    productName.text = 'productName ';
 
     return Scaffold(
       appBar: AppBar(
@@ -665,6 +669,7 @@ class _UpdateProductState extends State<UpdateProduct> {
 
                         margin: EdgeInsets.only(left: 20,right: 20),
                         child: TextField(
+                          controller: productName,
                           style: TextStyle(fontFamily: 'Poppins',fontSize: 15),
                           decoration: InputDecoration(
 
@@ -837,7 +842,7 @@ class _UpdateProductState extends State<UpdateProduct> {
                 width: double.maxFinite,
                 margin: EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 30),
                 child: MaterialButton(onPressed: (){
-                 // Navigator.push(context, MaterialPageRoute(builder: (context) => ReviewListed(),));
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) => ReviewListed(),));
                 }, child: Text('Save And Update',style: TextStyle(color: Colors.white,fontSize: 15),)
                   ,color: Colors.lightBlue.shade500,
                   height: 40,
