@@ -644,158 +644,184 @@ class _UpdateProductsState extends State<UpdateProducts> {
                       ),
 
                       Container(
-                        height: 150,
+                        margin: EdgeInsets.only(left: 20,right: 20,top: 25),
+                        child: Text(
+                          'Product Quantity/Price',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontFamily: 'Poppins',
+                            color: Colors.black87,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: 200,
                         child: ListView.builder(
                           itemCount: dummyProductList.length,
                           itemBuilder: (BuildContext context, int index) {
                             final product = dummyProductList[index];
                             final productUnit = product["unit"];
-                            return Padding(
-                              padding: EdgeInsets.all(15),
-                              child: Column(
-                                children: [
-                                  Row(
+                            return Column(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(left: 20,right: 20 ),
+                                  child: Text(
+                                    'Variant ${(index+1).toString()}',
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      fontFamily: 'Poppins',
+                                      color: Colors.black87,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.all(15),
+                                  child: Column(
                                     children: [
-                                      Expanded(
-                                        child: Container(
-                                          height: 60,
-                                          padding: EdgeInsets.all(16),
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                              width: 1,
-                                              color: Colors.black,
-                                            ),
-                                            borderRadius: BorderRadius.circular(12),
-                                          ),
-                                          child: TextFormField(
-                                            controller:
-                                            TextEditingController(text: product["quantity"]),
-                                            // onChanged: (value) => option.quantity = value,
-                                            onChanged: (value){
-                                              itemOptions[index].quantity = value;
-                                            },
-                                            decoration: InputDecoration(
-                                              hintText: 'Quantity',
-                                              border: InputBorder.none,
-
-                                            ),
-                                            style: TextStyle(
-                                              color: Colors.black.withOpacity(1.0),
-                                              fontSize: 16,
-                                              fontFamily: 'Urbanist',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(width: 16),
-                                      Container(
-                                        height: 60,
-                                        padding: EdgeInsets.all(16),
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                            width: 1,
-                                            color: Colors.black,
-                                          ),
-                                          borderRadius: BorderRadius.circular(12),
-                                        ),
-                                        child: DropdownButton<String>(
-                                          value: product["unit"],
-                                          onChanged: (String? value) {
-                                            setState(() {
-                                              product["unit"]  = value!;
-                                            });
-                                          },
-                                          items: dropDownItems.map((String value) {
-                                            return DropdownMenuItem<String>(
-                                              value: value,
-                                              child: Text(
-                                                value,
-                                                style: TextStyle(
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            child: Container(
+                                              height: 60,
+                                              padding: EdgeInsets.all(16),
+                                              decoration: BoxDecoration(
+                                                border: Border.all(
+                                                  width: 1,
                                                   color: Colors.black,
+                                                ),
+                                                borderRadius: BorderRadius.circular(12),
+                                              ),
+                                              child: TextFormField(
+                                                controller:
+                                                TextEditingController(text: product["quantity"]),
+                                                // onChanged: (value) => option.quantity = value,
+                                                onChanged: (value){
+                                                  itemOptions[index].quantity = value;
+                                                },
+                                                decoration: InputDecoration(
+                                                  hintText: 'Quantity',
+                                                  border: InputBorder.none,
+
+                                                ),
+                                                style: TextStyle(
+                                                  color: Colors.black.withOpacity(1.0),
                                                   fontSize: 16,
                                                   fontFamily: 'Urbanist',
                                                   fontWeight: FontWeight.w400,
                                                 ),
                                               ),
-                                            );
-                                          }).toList(),
-                                        ),
+                                            ),
+                                          ),
+                                          SizedBox(width: 16),
+                                          Container(
+                                            height: 60,
+                                            padding: EdgeInsets.all(16),
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                width: 1,
+                                                color: Colors.black,
+                                              ),
+                                              borderRadius: BorderRadius.circular(12),
+                                            ),
+                                            child: DropdownButton<String>(
+                                              value: product["unit"],
+                                              onChanged: (String? value) {
+                                                setState(() {
+                                                  product["unit"]  = value!;
+                                                });
+                                              },
+                                              items: dropDownItems.map((String value) {
+                                                return DropdownMenuItem<String>(
+                                                  value: value,
+                                                  child: Text(
+                                                    value,
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 16,
+                                                      fontFamily: 'Urbanist',
+                                                      fontWeight: FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                );
+                                              }).toList(),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 8,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            child: Container(
+                                              height: 60,
+                                              padding: EdgeInsets.all(16),
+                                              decoration: BoxDecoration(
+                                                border: Border.all(
+                                                  width: 1,
+                                                  color: Colors.black,
+                                                ),
+                                                borderRadius: BorderRadius.circular(12),
+                                              ),
+                                              child: TextFormField(
+                                                controller:
+                                                TextEditingController(text: product["mrpPrice"].toString()),
+                                                onChanged: (value){
+                                                  itemOptions[index].price = value;
+                                                },
+                                                decoration: InputDecoration(
+                                                  hintText: 'Price (In Rs.)',
+                                                  border: InputBorder.none,
+
+                                                ),
+                                                style: TextStyle(
+                                                  color: Colors.black.withOpacity(1.0),
+                                                  fontSize: 16,
+                                                  fontFamily: 'Urbanist',
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(width: 16),
+                                          Expanded(
+                                            child: Container(
+                                              height: 60,
+                                              padding: EdgeInsets.all(16),
+                                              decoration: BoxDecoration(
+                                                border: Border.all(
+                                                  width: 1,
+                                                  color: Colors.black,
+                                                ),
+                                                borderRadius: BorderRadius.circular(12),
+                                              ),
+                                              child: TextFormField(
+                                                controller:
+                                                TextEditingController(text: product["offerPrice"].toString()),
+                                                onChanged: (value){
+                                                  itemOptions[index].offerPrice = value;
+                                                },
+                                                decoration: InputDecoration(
+                                                  hintText: 'Offer Price',
+                                                  border: InputBorder.none,
+
+                                                ),
+                                                style: TextStyle(
+                                                  color: Colors.black.withOpacity(1.0),
+                                                  fontSize: 16,
+                                                  fontFamily: 'Urbanist',
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          height: 60,
-                                          padding: EdgeInsets.all(16),
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                              width: 1,
-                                              color: Colors.black,
-                                            ),
-                                            borderRadius: BorderRadius.circular(12),
-                                          ),
-                                          child: TextFormField(
-                                            controller:
-                                            TextEditingController(text: product["mrpPrice"].toString()),
-                                            onChanged: (value){
-                                              itemOptions[index].price = value;
-                                            },
-                                            decoration: InputDecoration(
-                                              hintText: 'Price (In Rs.)',
-                                              border: InputBorder.none,
-
-                                            ),
-                                            style: TextStyle(
-                                              color: Colors.black.withOpacity(1.0),
-                                              fontSize: 16,
-                                              fontFamily: 'Urbanist',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(width: 16),
-                                      Expanded(
-                                        child: Container(
-                                          height: 60,
-                                          padding: EdgeInsets.all(16),
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                              width: 1,
-                                              color: Colors.black,
-                                            ),
-                                            borderRadius: BorderRadius.circular(12),
-                                          ),
-                                          child: TextFormField(
-                                            controller:
-                                            TextEditingController(text: product["offerPrice"].toString()),
-                                            onChanged: (value){
-                                              itemOptions[index].offerPrice = value;
-                                            },
-                                            decoration: InputDecoration(
-                                              hintText: 'Offer Price',
-                                              border: InputBorder.none,
-
-                                            ),
-                                            style: TextStyle(
-                                              color: Colors.black.withOpacity(1.0),
-                                              fontSize: 16,
-                                              fontFamily: 'Urbanist',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             );
                           },
                         ),
