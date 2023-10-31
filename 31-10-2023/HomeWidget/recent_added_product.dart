@@ -13,9 +13,9 @@ class _RecentAddedProductState extends State<RecentAddedProduct> {
     return  Container(
       margin:EdgeInsets.only(
           left: 15.0, right: 15.0),
-      height: 300,
-      child: Expanded(
-        child: ListView.builder(
+
+      child:   ListView.builder(
+          shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
           itemCount: 2,
           itemBuilder: (BuildContext context, int index) {
@@ -152,7 +152,7 @@ class _RecentAddedProductState extends State<RecentAddedProduct> {
             );
           },
         ),
-      ),
+
     );
   }
 }
